@@ -15,6 +15,11 @@ Spork.prefork do
   # in ./support/ and its subdirectories.
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
+  
+  def test_log_in(user)
+    controller.log_in(user)
+  end
+
   Rspec.configure do |config|
     # == Mock Framework
     #
