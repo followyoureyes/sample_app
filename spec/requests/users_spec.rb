@@ -52,10 +52,7 @@ describe "Users" do
       
       it "should log a user in and out" do
         user = Factory(:user)
-        visit login_path
-        fill_in :email,     :with => user.email
-        fill_in :password,  :with => user.password
-        click_button
+        integration_log_in(user)
         controller.should be_logged_in
         click_link "Logout"
         controller.should_not be_logged_in
