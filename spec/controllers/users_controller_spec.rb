@@ -129,6 +129,7 @@ describe UsersController do
     before(:each) do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       @user = Factory(:user)
       test_sign_in(@user)
     end
@@ -138,6 +139,10 @@ describe UsersController do
 >>>>>>> updating-users
       user = Factory(:user)
       integration_log_in(user)
+=======
+      @user = Factory(:user)
+      test_log_in(@user)
+>>>>>>> updating-users
     end
   
 <<<<<<< HEAD
