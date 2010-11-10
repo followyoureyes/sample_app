@@ -127,8 +127,15 @@ describe UsersController do
   describe "GET edit" do
     
     before(:each) do
+<<<<<<< HEAD
       @user = Factory(:user)
       test_sign_in(@user)
     end
   end
+=======
+      user = Factory(:user)
+      integration_log_in(user)
+    end
+  
+>>>>>>> updating-users
 end
