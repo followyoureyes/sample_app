@@ -42,9 +42,6 @@ Spork.prefork do
       controller.log_in(user)
     end
 
-    def test_log_in(user)
-      controller.log_in(user)
-    end
 
     def integration_log_in(user)
       visit login_path
