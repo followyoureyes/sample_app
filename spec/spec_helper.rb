@@ -15,10 +15,6 @@ Spork.prefork do
   # in ./support/ and its subdirectories.
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
-  
-  def test_log_in(user)
-    controller.log_in(user)
-  end
 
   Rspec.configure do |config|
     # == Mock Framework
@@ -41,6 +37,18 @@ Spork.prefork do
     # Emulate initializer set_clear_dependencies_hook in 
     # railties/lib/rails/application/bootstrap.rb
     ActiveSupport::Dependencies.clear
+    
+    
+    def test_log_in(user)
+      controller.log_in(user)
+    end
+
+    def integration_log_in(user)
+      visit login_path
+      fill_in :email,     :with => user.email
+      fill_in :password,  :with => user.password
+      click_button
+    end
   end
 end
 

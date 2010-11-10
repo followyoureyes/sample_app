@@ -123,4 +123,12 @@ describe UsersController do
       end
     end 
   end 
+  
+  describe "GET edit" do
+    
+    before(:each) do
+      user = Factory(:user)
+      integration_log_in(user)
+    end
+  
 end
