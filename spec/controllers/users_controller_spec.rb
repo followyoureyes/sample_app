@@ -127,30 +127,10 @@ describe UsersController do
   describe "GET edit" do
     
     before(:each) do
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       @user = Factory(:user)
       test_sign_in(@user)
     end
-  end
-=======
-=======
->>>>>>> updating-users
-      user = Factory(:user)
-      integration_log_in(user)
-=======
-      @user = Factory(:user)
-      test_log_in(@user)
->>>>>>> updating-users
-    end
-<<<<<<< HEAD
-  
-<<<<<<< HEAD
->>>>>>> updating-users
-=======
->>>>>>> updating-users
-=======
     
     it "should be successful" do
       get :edit, :id => @user
@@ -169,5 +149,4 @@ describe UsersController do
                                             :content => "change")
     end
   end
->>>>>>> updating-users
 end

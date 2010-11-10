@@ -37,25 +37,15 @@ Spork.prefork do
     # Emulate initializer set_clear_dependencies_hook in 
     # railties/lib/rails/application/bootstrap.rb
     ActiveSupport::Dependencies.clear
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-    def test_log_in(user)
-      controller.log_in(user)
-    end
-    
-=======
-=======
->>>>>>> updating-users
-    
+  
     def test_log_in(user)
       controller.log_in(user)
     end
 
-<<<<<<< HEAD
->>>>>>> updating-users
-=======
->>>>>>> updating-users
+    def test_log_in(user)
+      controller.log_in(user)
+    end
+
     def integration_log_in(user)
       visit login_path
       fill_in :email,     :with => user.email
