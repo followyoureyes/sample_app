@@ -39,16 +39,22 @@ Spork.prefork do
     ActiveSupport::Dependencies.clear
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     def test_log_in(user)
       controller.log_in(user)
     end
     
 =======
+=======
+>>>>>>> updating-users
     
     def test_log_in(user)
       controller.log_in(user)
     end
 
+<<<<<<< HEAD
+>>>>>>> updating-users
+=======
 >>>>>>> updating-users
     def integration_log_in(user)
       visit login_path
