@@ -286,6 +286,13 @@ describe UsersController do
         response.should have_selector("a",  :href => "/users?page=2",
                                             :content => "Next")
       end
+      
+      describe "for non-admin users" do
+        it "should not show the delete-links" do
+          get :index
+          response.should_not have_selector("a", :content => "Delete")
+        end
+      end
     end
   end
   
@@ -328,6 +335,13 @@ describe UsersController do
       it "should redirect to the users page" do
         delete :destroy, :id => @user
         response.should redirect_to(users_path)
+      end
+      
+      it "should not be able to delete admins" do
+        @user = Factory(:user, :email => "second_admin@example.org", :admin => true)
+        lambda do
+          delete :destroy, :id => @user
+        end.should_not change(User, :count).by(-1)
       end
     end
   end
